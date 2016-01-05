@@ -1,0 +1,95 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Mon Jan  4 17:22:22 2016
+;; Desktop file format version 206
+;; Emacs version 24.3.1
+
+;; Global section:
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring '("descb" "load-" "spacing" "ndimage" "color-theme-sa" "color-theme-buff" "ox-rev" "dam" "length" "solarized" "tomorrow" "solari" "tomorrow" "ido" "cython" "python"))
+(setq regexp-search-ring nil)
+(setq register-alist (list '(48 . "repor") (list 313465889 "Unprintable entity" (let ((mk (make-marker))) (add-hook 'desktop-delay-hook (list 'lambda '() (list 'set-marker mk nil (get-buffer " *temp*")))) mk))))
+(setq file-name-history '("~/afshome/private/Agenda2016/Journal/000_document.tex" "~/afshome/private/Agenda2016/Chamonix/000_document.tex" "~/afshome/private/Agenda2016/Journal/001_documet.tex" "~/afshome/.emacs" "~/.emacs" "~/Dokumente/work/Journal/draft.pdf" "~/Dokumente/work/Notes/011-HL-LHC_Milestone_report/hl-lhc_dh.tex" "~/Dokumente/work/Notes/010-USPAS_course_Vlasov_equation/draft.tex" "~/Dokumente/Talks/Evian/000_Outline.org" "~/Dokumente/Talks/Evian/001_Outline.org" "/afs/cern.ch/user/k/kli/.emacs" "~/Bilder/CERN_Logos/Single_t.xcf" "~/Bilder/CERN_Logos/Single_w.xcf" "~/Bilder/CERN_Logos/White.xcf" "~/Bilder/CERN_Logos/Test.xcf" "~/Bilder/CERN_Logos/Transparent.xcf" "~/afshome/MADX/Squeeze_optics/job_qpp.madx" "~/afshome/MADX/Squeeze_optics/job.twiss.madx" "~/Data/011_Chamonix/job_qpp.madx" "~/afshome/lhcscrub/LHC_physics25ns_afterTS2/LHCMeasurementTools/LHC_BSRT.py" "~/Data/004_LHC/010_Chamonix/LHC_footprints_playaround.py" "~/afshome/lhcscrub/LHC_physics25ns_afterTS3/LHCMeasurementTools/LHC_BSRT.py" "~/afshome/Data/Lee/afslcarver/Fill_Analysis/Tools/LHC_BSRT.py" "~/afshome/lhcscrub/LHC_physics25ns_afterTS2/005_plot_bsrt.py" "~/workspace/PyHEADTAIL/particles/slicing.py" "~/afshome/Data/Lee/003_plot_coupling.py" "~/afshome/Data/Lee/002_plot_simpler.py" "~/workspace/PyMachines/synchrotron.py" "~/Data/010_CAS/005a_anharmonicity.py" "~/Data/004_LHC/010_Chamonix/QppFootprintLHC-newPyHT-IF.py"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/home/kli/afshome/private/Agenda2016/Chamonix/000_document.tex"
+  "000_document.tex"
+  'latex-mode
+  '(auto-fill-mode visual-line-mode linum-mode helm-mode TeX-PDF-mode reftex-mode flyspell-mode)
+  1452
+  '(976 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix) (case-fold-search . t) (truncate-lines) (TeX-master . t)))
+
+(desktop-create-buffer 206
+  "/home/kli/afshome/private/Agenda2016/Journal/000_document.tex"
+  "000_document.tex<2>"
+  'latex-mode
+  '(auto-fill-mode visual-line-mode linum-mode helm-mode TeX-PDF-mode reftex-mode flyspell-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix) (truncate-lines) (TeX-master . t)))
+
+(desktop-create-buffer 206
+  "/home/kli/.emacs"
+  ".emacs"
+  'emacs-lisp-mode
+  '(linum-mode helm-mode TeX-PDF-mode)
+  3763
+  '(1365 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/kli/Data/010_CAS/007_macroparticles.py"
+  "007_macroparticles.py"
+  'python-mode
+  '(linum-mode helm-mode TeX-PDF-mode auto-complete-mode)
+  2255
+  '(1691 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/kli/Data/010_CAS/002b_sps_filamentation.py"
+  "002b_sps_filamentation.py"
+  'python-mode
+  '(linum-mode helm-mode TeX-PDF-mode auto-complete-mode)
+  1
+  '(892 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/kli/Data/010_CAS/005a_anharmonicity.py"
+  "005a_anharmonicity.py"
+  'python-mode
+  '(linum-mode helm-mode TeX-PDF-mode auto-complete-mode)
+  1
+  '(1514 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/kli/Data/010_CAS/gianni.txt"
+  "gianni.txt"
+  'text-mode
+  '(linum-mode helm-mode TeX-PDF-mode)
+  1
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
