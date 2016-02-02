@@ -6,7 +6,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes (quote (sanityinc-tomorrow-night)))
- '(custom-safe-themes (quote ("06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" default)))
+ '(custom-safe-themes
+   (quote
+    ("06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" default)))
  '(delete-selection-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -14,14 +16,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "Courier" :foundry "ibm" :slant normal :weight normal :height 113 :width normal)))))
-
-
-;; PACKAGE
-;; =======
-(require 'package)
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
-(package-initialize)
 
 
 ;; LOOK AND FEEL
@@ -41,6 +35,14 @@
 (setq-default show-trailing-whitespace 1)
 
 
+;; PACKAGE
+;; =======
+(require 'package)
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
+(package-initialize)
+
+
 ;; COLOR THEMES
 ;; ============
 ;; (load-theme 'base16-default-dark t)
@@ -50,7 +52,7 @@
   (interactive)
   (if (eq (frame-parameter (next-frame) 'background-mode) 'light)
       (color-theme-sanityinc-tomorrow-night)
-    (color-theme-sanityinc-solarized-light)))
+    (color-theme-sanityinc-tomorrow-day)))
 (global-set-key (kbd "C-t") 'toggle-themes)
 
 
@@ -60,15 +62,35 @@
 (global-set-key (kbd "C-c C-b") 'ibuffer)
 (global-set-key (kbd "M-<left>") 'previous-buffer)
 (global-set-key (kbd "M-<right>") 'next-buffer)
+(global-set-key (kbd "<f11>") 'fullscreen-mode-fullscreen-toggle)
 
-
-;; COMMENT SINGLE LINE
-;; ===================
 (defun toggle-comment-on-line ()
   "Comment or uncomment current line"
   (interactive)
   (comment-or-uncomment-region (line-beginning-position) (line-end-position)))
 (global-set-key (kbd "C-;") 'toggle-comment-on-line)
+
+
+;; SOME HANDY PACKAGES
+;; ===================
+;; (add-hook 'after-init-hook #'global-flycheck-mode)
+
+
+;; PYTHON MODE
+;; ===========
+(setq jedi:setup-keys t)
+(setq jedi:complete-on-dot t)
+(add-hook 'python-mode-hook 'jedi:setup)
+(add-hook 'python-mode-hook '(lambda ()
+			       (message "Found Python mode!")
+			       ;; (guess-style-guess-tab-width)
+			       (setq-default py-indent-tabs-mode nil)
+			       (setq-default python-indent 4)))
+(global-set-key (kbd "M-<") 'python-indent-shift-left)
+(global-set-key (kbd "M->") 'python-indent-shift-right)
+
+(when (executable-find "ipython")
+  (setq python-shell-interpreter "ipython"))
 
 
 ;; AUCTeX
@@ -90,10 +112,6 @@
 (latex-preview-pane-enable)
 (setq preview-scale-function 1.2)
 
-;; (setq TeX-view-program-list '("Okular" "okular --unique %o#src:%n%b"))
-;; (setq TeX-view-program-selection '((output-pdf "Okular") (output-html "xdg-open")))
-;; '(LaTeX-command "latex -synctex=1")
-
 
 ;; DOCVIEW
 ;; =======
@@ -103,11 +121,6 @@
 (global-set-key (kbd "M-S-<up>") 'doc-prev)
 (global-set-key (kbd "M-S-<down>") 'doc-next)
 (add-hook 'doc-view-mode-hook 'auto-revert-mode)
-
-
-;; FULLSCREEN
-;; ==========
-(global-set-key (kbd "<f11>") 'fullscreen-mode-fullscreen-toggle)
 
 
 ;; HELM
@@ -127,10 +140,12 @@
 (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
 (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
 
-(global-set-key (kbd "C-c h g") 'helm-google-suggest)
+(global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x b") 'helm-mini)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "C-x C-g") 'helm-google-suggest)
 (setq helm-buffers-fuzzy-matching t
-      helm-recentf-fuzzy-match    t)
+      helm-recentf-fuzzy-match t)
 
 (when (executable-find "curl")
   (setq helm-google-suggest-use-curl-p t))
@@ -140,22 +155,6 @@
       helm-ff-search-library-in-sexp        t ; search for library in `require' and `declare-function' sexp.
       helm-scroll-amount                    8 ; scroll 8 lines other window using M-<next>/M-<prior>
       helm-ff-file-name-history-use-recentf t)
-
-(helm-mode 1)
-(helm-descbinds-mode)
-
-
-;; IPYTHON MODE
-;; ============
-(when (executable-find "ipython")
-  (setq python-shell-interpreter "ipython"))
-
-
-;; JEDI AUTO COMPLETE
-;; ==================
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:setup-keys t)
-(setq jedi:complete-on-dot t)
 
 
 ;; MULTIPLE CURSORS
@@ -167,23 +166,11 @@
 
 ;; ORG MODE
 ;; ========
-(require 'ox-reveal)
+;; (require 'ox-reveal)
 (setq system-time-locale "C")
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((python . t)))
-
-
-;; PYTHON MODE
-;; ===========
-(add-hook 'python-mode-hook 'guess-style-guess-tabs-mode)
-(add-hook 'python-mode-hook (lambda ()
-			      (guess-style-guess-tab-width)))
-(add-hook 'python-mode-hook '(lambda ()
-			       (setq-default py-indent-tabs-mode nil)
-			       (setq-default python-indent 4)))
-(global-set-key (kbd "M-<") 'python-indent-shift-left)
-(global-set-key (kbd "M->") 'python-indent-shift-right)
 
 
 ;; TIME
