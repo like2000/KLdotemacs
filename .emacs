@@ -5,34 +5,28 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (sanityinc-tomorrow-night)))
- '(custom-safe-themes
-   (quote
-    ("06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" default)))
- '(delete-selection-mode nil))
+ '(column-number-mode t)
+ '(cua-mode t nil (cua-base))
+ '(display-time-mode t)
+ '(indent-tabs-mode nil)
+ '(scroll-bar-mode nil)
+ '(show-paren-mode t)
+ '(show-trailing-whitespace t)
+ '(tab-width 4)
+ '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Courier" :foundry "ibm" :slant normal :weight normal :height 113 :width normal)))))
+ '(default ((t (:family "Courier" :foundry "ibm" :slant normal :weight normal :height 113 :width normal))))
+ '(trailing-whitespace ((t (:background "dark magenta")))))
 
 
-;; LOOK AND FEEL
-;; =============
-(scroll-bar-mode -1)
-(tool-bar-mode -1)
-
-(column-number-mode 1)
-(global-linum-mode 1)
-(show-paren-mode 1)
-
-(cua-mode 1)
+;; LOOK AND FEEL - FURZEN UND SCHEISSEN
+;; ====================================
 (desktop-save-mode 1)
 (setq desktop-restore-in-current-display 1)
-
-(setq-default indent-tabs-mode -1)
-(setq-default show-trailing-whitespace 1)
 
 
 ;; PACKAGE
@@ -46,7 +40,8 @@
 ;; COLOR THEMES
 ;; ============
 ;; (load-theme 'base16-default-dark t)
-(color-theme-sanityinc-tomorrow-night)
+;; (color-theme-sanityinc-tomorrow-night)
+(color-theme-monokai)
 (defun toggle-themes ()
   "Switch from/to night color scheme."
   (interactive)
