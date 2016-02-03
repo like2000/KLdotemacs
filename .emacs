@@ -27,6 +27,7 @@
 ;; ====================================
 (desktop-save-mode 1)
 (setq desktop-restore-in-current-display 1)
+(setq display-time-24hr-format t)
 
 
 ;; PACKAGE
@@ -133,7 +134,7 @@
 
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
 (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
-(define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
+(define-key helm-map (kbd "C-z") 'helm-select-action) ; list actions using C-z
 
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x b") 'helm-mini)
@@ -166,10 +167,3 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((python . t)))
-
-
-;; TIME
-;; ====
-(setq display-time-day-and-date t
-      display-time-24hr-format t)
-(display-time)
