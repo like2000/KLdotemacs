@@ -8,6 +8,7 @@
  '(column-number-mode t)
  '(cua-mode t nil (cua-base))
  '(display-time-mode t)
+ '(global-linum-mode t)
  '(indent-tabs-mode nil)
  '(scroll-bar-mode nil)
  '(show-paren-mode t)

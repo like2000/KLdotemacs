@@ -2,62 +2,62 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Wed Feb  3 11:36:27 2016
+;; Created Fri Feb  5 18:37:49 2016
 ;; Desktop file format version 206
 ;; Emacs version 24.5.1
 
 ;; Global section:
-(setq desktop-saved-frameset [frameset 1 (22193 55339 68688 155000) (desktop . "206") "kli@pcbe16023.site" nil nil ((((font-backend xft x) (font . "-ibm-Courier-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1") (font-parameter . "Courier") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (foreground-color . "#c5c8c6") (background-color . "#1d1f21") (mouse-color . "#31363b") (border-color . "#373b41") (screen-gamma) (line-spacing) (left-fringe . 0) (right-fringe . 9) (scroll-bar-foreground . "#31363b") (scroll-bar-background . "grey75") (menu-bar-lines . 0) (tool-bar-lines . 0) (title) (wait-for-wm . t) (fullscreen) (tool-bar-position . top) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 0) (alpha) (display-type . color) (background-mode . dark) (cursor-color . "#cc6666") (visibility) (minibuffer) (sticky) (frameset--id . "516B-12C0-99E4-9177") (frameset--mini nil . "751D-8815-F622-D2DC") (modeline . t) (unsplittable . t) (icon-name) (display . ":0") (explicit-name) (height . 56) (width . 20) (left . 1) (top . 47)) ((min-height . 4) (min-width . 10) (min-height-ignore . 2) (min-width-ignore . 3) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 72) (min-pixel-width . 90) (min-pixel-height-ignore . 36) (min-pixel-width-ignore . 27) (min-pixel-height-safe . 18) (min-pixel-width-safe . 18)) leaf (last . t) (pixel-width . 189) (pixel-height . 1008) (total-width . 21) (total-height . 56) (normal-height . 1.0) (normal-width . 1.0) (buffer "*scratch*" (selected) (hscroll . 0) (fringes 0 9 nil) (margins nil) (scroll-bars 0 0 nil nil) (vscroll . 0) (dedicated) (point . 1) (start . 1))) (((font-backend xft x) (font . "-ibm-Courier-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1") (font-parameter . "Courier") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (foreground-color . "#F8F8F2") (background-color . "#272822") (mouse-color . "#31363b") (border-color . "#373b41") (screen-gamma) (line-spacing) (left-fringe . 9) (right-fringe . 9) (scroll-bar-foreground . "#31363b") (scroll-bar-background . "grey75") (menu-bar-lines . 1) (tool-bar-lines . 0) (title) (wait-for-wm . t) (fullscreen . maximized) (tool-bar-position . top) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 0) (alpha) (horizontal-scroll-bars . t) (display-type . color) (background-mode . dark) (cursor-color . "#F8F8F0") (sticky) (environment) (frameset--id . "751D-8815-F622-D2DC") (frameset--mini t . t) (modeline . t) (minibuffer . t) (unsplittable) (icon-name) (display . ":0") (explicit-name) (visibility . t) (height . 55) (width . 211) (left . 1) (top . 41)) ((min-height . 4) (min-width . 20) (min-height-ignore . 2) (min-width-ignore . 8) (min-height-safe . 1) (min-width-safe . 4) (min-pixel-height . 72) (min-pixel-width . 180) (min-pixel-height-ignore . 36) (min-pixel-width-ignore . 72) (min-pixel-height-safe . 18) (min-pixel-width-safe . 36)) hc (pixel-width . 1917) (pixel-height . 972) (total-width . 213) (total-height . 54) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 972) (pixel-height . 972) (total-width . 108) (total-height . 54) (normal-height . 1.0) (normal-width . 0.5060240963855422) (buffer "Ex002_Monitors.py" (selected . t) (hscroll . 0) (fringes 9 9 nil) (margins 3) (scroll-bars 0 0 t nil) (vscroll . 0) (dedicated) (point . 699) (start . 1))) (leaf (last . t) (pixel-width . 945) (pixel-height . 972) (total-width . 105) (total-height . 54) (normal-height . 1.0) (normal-width . 0.4939759036144578) (buffer "*scratch*" (selected) (hscroll . 0) (fringes 9 9 nil) (margins nil) (scroll-bars 0 0 t nil) (vscroll . 0) (dedicated) (point . 192) (start . 1)))))])
+(setq desktop-saved-frameset [frameset 1 (22196 56813 886195 702000) (desktop . "206") "kli@pcbe16023.site" nil nil ((((font-backend xft x) (font . "-ibm-Courier-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1") (font-parameter . "Courier") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (foreground-color . "#c5c8c6") (background-color . "#1d1f21") (mouse-color . "#31363b") (border-color . "#373b41") (screen-gamma) (line-spacing) (left-fringe . 0) (right-fringe . 9) (scroll-bar-foreground . "#31363b") (scroll-bar-background . "grey75") (menu-bar-lines . 0) (tool-bar-lines . 0) (title) (wait-for-wm . t) (fullscreen) (tool-bar-position . top) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 0) (alpha) (display-type . color) (background-mode . dark) (cursor-color . "#cc6666") (visibility) (minibuffer) (sticky) (frameset--id . "516B-12C0-99E4-9177") (frameset--mini nil . "751D-8815-F622-D2DC") (modeline . t) (unsplittable . t) (icon-name) (display . ":0") (explicit-name) (height . 56) (width . 20) (left . 1) (top . 47)) ((min-height . 4) (min-width . 10) (min-height-ignore . 2) (min-width-ignore . 3) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 72) (min-pixel-width . 90) (min-pixel-height-ignore . 36) (min-pixel-width-ignore . 27) (min-pixel-height-safe . 18) (min-pixel-width-safe . 18)) leaf (last . t) (pixel-width . 189) (pixel-height . 1008) (total-width . 21) (total-height . 56) (normal-height . 1.0) (normal-width . 1.0) (buffer "*scratch*" (selected) (hscroll . 0) (fringes 0 9 nil) (margins nil) (scroll-bars 0 0 nil nil) (vscroll . 0) (dedicated) (point . 1) (start . 1))) (((font-backend xft x) (font . "-ibm-Courier-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1") (font-parameter . "Courier") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (foreground-color . "#F8F8F2") (background-color . "#272822") (mouse-color . "#31363b") (border-color . "#373b41") (screen-gamma) (line-spacing) (left-fringe . 9) (right-fringe . 9) (scroll-bar-foreground . "#31363b") (scroll-bar-background . "grey75") (menu-bar-lines . 1) (tool-bar-lines . 0) (title) (wait-for-wm . t) (fullscreen . maximized) (tool-bar-position . top) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 0) (alpha) (horizontal-scroll-bars . t) (display-type . color) (background-mode . dark) (cursor-color . "#F8F8F0") (sticky) (environment) (frameset--id . "751D-8815-F622-D2DC") (frameset--mini t . t) (modeline . t) (minibuffer . t) (unsplittable) (icon-name) (display . ":0") (explicit-name) (visibility . t) (height . 55) (width . 211) (left . 0) (top . 35)) ((min-height . 4) (min-width . 10) (min-height-ignore . 2) (min-width-ignore . 4) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 72) (min-pixel-width . 90) (min-pixel-height-ignore . 36) (min-pixel-width-ignore . 36) (min-pixel-height-safe . 18) (min-pixel-width-safe . 18)) leaf (pixel-width . 1917) (pixel-height . 972) (total-width . 213) (total-height . 54) (normal-height . 1.0) (normal-width . 1.0) (buffer ".emacs<KLdotemacs>" (selected . t) (hscroll . 0) (fringes 9 9 nil) (margins 3) (scroll-bars 0 0 t nil) (vscroll . 0) (dedicated) (point . 363) (start . 1))))])
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list nil)
-(setq search-ring '("descb" "load-" "spacing" "ndimage" "color-theme-sa" "color-theme-buff" "ox-rev" "dam" "length" "solarized" "tomorrow" "solari" "tomorrow" "ido" "cython" "python"))
+(setq search-ring '("multi-term" "descb" "load-" "spacing" "ndimage" "color-theme-sa" "color-theme-buff" "ox-rev" "dam" "length" "solarized" "tomorrow" "solari" "tomorrow" "ido" "cython"))
 (setq regexp-search-ring nil)
 (setq register-alist (list '(48 . "-default\n-default") (list 313465889 "Unprintable entity" (let ((mk (make-marker))) (add-hook 'desktop-delay-hook `(lambda nil (set-marker ,mk ,nil (get-buffer ," *temp*")))) mk))))
-(setq file-name-history '("~/.emacs" "~/.emacs.d/.emacs.desktop.lock" "~/.emacs.d/.emacs.desktop" "~/afshome/private/Agenda2016/PyHEADTAIL/000_document.tex" "~/afshome/private/Agenda2016/Chamonix/000_document.tex" "~/Dokumente/work/USPAS/PyHEADTAIL_Intro/Ex003_Wakes.py" "~/Dokumente/work/USPAS/PyHEADTAIL_Intro/Ex002_Monitors.py" "~/Dokumente/work/USPAS/PyHEADTAIL_Intro/Ex001_Generation.py" "~/Dokumente/work/USPAS/PyHEADTAIL_Intro/Ex004_Giovanni.py" "~/Dokumente/work/USPAS/Simulations/sps_ramp_generation.py" "~/Bilder/CERN_Logos/LIU-background.svg" "~/Bilder/CERN_Logos/LIU-background-messedup.svg" "~/workspace/PyHEADTAIL/000_tutorial.py" "~/Dokumente/work/USPAS/Simulations/" "~/Dokumente/" "~/Dokumente/IPython_Notebooks/2016/001_Coupling/001_Seeded/main.py" "~/Bilder/CERN_Logos/Hintergrund.svg" "~/Bilder/CERN_Logos/LIU.svg" "~/TeX_files/JACoW/Evian16/000_draft.tex" "~/Dokumente/Tasks/Wideband_feedback.org" "~/Dokumente/Tasks/Plan.org" "~/Dokumente/Tasks/notes.org" "~/RFQ_Minutes.org" "~/afshome/lhcscrub/LHC_Scrubbing2015_for25ns/ADTDataAnalysis/002a_all_bunches_beauty.py" "~/Bilder/CERN_Logos/Background-standard.svg" "~/Bilder/CERN_Logos/Hintergrund-experiment.svg" "~/Bilder/CERN_Logos/Hintergrund-experiment.svg~" "~/Bilder/CERN_Logos/Zeichnung.svg" "~/Bilder/CERN_Logos/Test-slide.svg" "~/Bilder/CERN_Logos/Test2.svg" "~/Bilder/CERN_Logos/Test1.svg" "~/Bilder/CERN_Logos/Test3.svg" "~/Bilder/CERN_Logos/Test.svg" "~/Bilder/CERN_Logos/XML3.svg" "~/Bilder/CERN_Logos/XML2.svg" "~/Bilder/CERN_Logos/XML.svg" "~/afshome/lhcscrub/tasks_TODO.txt" "~/afshome/lhcscrub/instability_on_adtpu/Only_Plot_ADTPU_2.py" "~/afshome/lhcscrub/instability_on_adtpu/multiturndata.py" "~/afshome/lhcscrub/instability_on_adtpu/000_lets_see.py" "~/afshome/lhcscrub/ADT_acquisition_setup.org" "~/Bilder/CERN_Logos/XHD.svg" "~/Bilder/CERN_Logos/Zeichnung-1.svg"))
+(setq file-name-history '("~/.emacs" "~/workspace/KLdotemacs/.emacs" "~/afshome/private/Agenda2016/Evian/000_document.pdf" "~/afshome/private/Agenda2016/Journal/000_document.tex" "~/.bashrc" "~/afshome/private/Agenda2016/Evian/000_document.tex" "~/.emacs.d/.emacs.desktop.lock" "~/.emacs.d/.emacs.desktop" "~/afshome/private/Agenda2016/PyHEADTAIL/000_document.tex" "~/afshome/private/Agenda2016/Chamonix/000_document.tex" "~/Dokumente/work/USPAS/PyHEADTAIL_Intro/Ex003_Wakes.py" "~/Dokumente/work/USPAS/PyHEADTAIL_Intro/Ex002_Monitors.py" "~/Dokumente/work/USPAS/PyHEADTAIL_Intro/Ex001_Generation.py" "~/Dokumente/work/USPAS/PyHEADTAIL_Intro/Ex004_Giovanni.py" "~/Dokumente/work/USPAS/Simulations/sps_ramp_generation.py" "~/Bilder/CERN_Logos/LIU-background.svg" "~/Bilder/CERN_Logos/LIU-background-messedup.svg" "~/workspace/PyHEADTAIL/000_tutorial.py" "~/Dokumente/work/USPAS/Simulations/" "~/Dokumente/" "~/Dokumente/IPython_Notebooks/2016/001_Coupling/001_Seeded/main.py" "~/Bilder/CERN_Logos/Hintergrund.svg" "~/Bilder/CERN_Logos/LIU.svg" "~/TeX_files/JACoW/Evian16/000_draft.tex" "~/Dokumente/Tasks/Wideband_feedback.org" "~/Dokumente/Tasks/Plan.org" "~/Dokumente/Tasks/notes.org" "~/RFQ_Minutes.org" "~/afshome/lhcscrub/LHC_Scrubbing2015_for25ns/ADTDataAnalysis/002a_all_bunches_beauty.py" "~/Bilder/CERN_Logos/Background-standard.svg" "~/Bilder/CERN_Logos/Hintergrund-experiment.svg" "~/Bilder/CERN_Logos/Hintergrund-experiment.svg~" "~/Bilder/CERN_Logos/Zeichnung.svg" "~/Bilder/CERN_Logos/Test-slide.svg" "~/Bilder/CERN_Logos/Test2.svg" "~/Bilder/CERN_Logos/Test1.svg" "~/Bilder/CERN_Logos/Test3.svg" "~/Bilder/CERN_Logos/Test.svg" "~/Bilder/CERN_Logos/XML3.svg" "~/Bilder/CERN_Logos/XML2.svg" "~/Bilder/CERN_Logos/XML.svg" "~/afshome/lhcscrub/tasks_TODO.txt" "~/afshome/lhcscrub/instability_on_adtpu/Only_Plot_ADTPU_2.py" "~/afshome/lhcscrub/instability_on_adtpu/multiturndata.py" "~/afshome/lhcscrub/instability_on_adtpu/000_lets_see.py" "~/afshome/lhcscrub/ADT_acquisition_setup.org" "~/Bilder/CERN_Logos/XHD.svg" "~/Bilder/CERN_Logos/Zeichnung-1.svg"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 206
-  "/home/kli/Dokumente/work/USPAS/PyHEADTAIL_Intro/Ex002_Monitors.py"
-  "Ex002_Monitors.py"
-  'python-mode
-  '(linum-mode helm-mode auto-complete-mode)
-  699
-  '(287 nil)
+  "/home/kli/workspace/KLdotemacs/.emacs"
+  ".emacs"
+  'emacs-lisp-mode
+  '(linum-mode helm-mode)
+  363
+  '(nil nil)
   nil
   nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/kli/.emacs"
+  ".emacs"
+  'emacs-lisp-mode
+  '(linum-mode helm-mode)
+  5192
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
   "/home/kli/Dokumente/work/USPAS/PyHEADTAIL_Intro/Ex003_Wakes.py"
   "Ex003_Wakes.py"
   'python-mode
   '(linum-mode helm-mode auto-complete-mode)
-  916
+  5935
   '(nil nil)
   nil
   nil
   '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/home/kli/Dokumente/work/USPAS/PyHEADTAIL_Intro/Ex004_Giovanni.py"
-  "Ex004_Giovanni.py"
+  "/home/kli/workspace/PyHEADTAIL_Tutorials/experiments/001_experiment_mpi.py"
+  "001_experiment_mpi.py"
   'python-mode
   '(linum-mode helm-mode auto-complete-mode)
-  807
-  '(2820 nil)
+  177
+  '(132 nil)
   nil
   nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/home/kli/Dokumente/work/USPAS/PyHEADTAIL_Intro/Ex001_Generation.py"
-  "Ex001_Generation.py"
-  'python-mode
-  '(linum-mode helm-mode auto-complete-mode)
-  583
-  '(nil nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+  '((tab-width . 8) (indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
 
