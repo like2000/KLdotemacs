@@ -60,6 +60,7 @@
 (global-set-key (kbd "M-<left>") 'previous-buffer)
 (global-set-key (kbd "M-<right>") 'next-buffer)
 (global-set-key (kbd "<f11>") 'fullscreen-mode-fullscreen-toggle)
+(global-set-key (kbd "C-S-<return>") 'python-shell-send-cell)
 
 (defun toggle-comment-on-line ()
   "Comment or uncomment current line"
