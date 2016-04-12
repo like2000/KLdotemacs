@@ -7,10 +7,6 @@
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
  '(cua-mode t nil (cua-base))
- '(custom-enabled-themes (quote (sanityinc-tomorrow-day)))
- '(custom-safe-themes
-   (quote
-    ("bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" default)))
  '(delete-selection-mode nil)
  '(display-time-mode t)
  '(fill-column 80)
@@ -47,9 +43,9 @@
 
 ;; COLOR THEMES
 ;; ============
+(load-theme 'zenburn t)
 ;; (load-theme 'base16-default-dark t)
-(color-theme-sanityinc-tomorrow-day)
-;; (color-theme-monokai)
+;; (color-theme-sanityinc-tomorrow-day)
 (defun toggle-themes ()
   "Switch from/to night color scheme."
   (interactive)
@@ -64,8 +60,8 @@
 (windmove-default-keybindings)
 (global-set-key (kbd "<f11>") 'fullscreen-mode-fullscreen-toggle)
 (global-set-key (kbd "C-c C-b") 'ibuffer)
-(global-set-key (kbd "M-S-<left>") 'previous-buffer)
-(global-set-key (kbd "M-S-<right>") 'next-buffer)
+(global-set-key (kbd "C-M-<left>") 'previous-buffer)
+(global-set-key (kbd "C-M-<right>") 'next-buffer)
 (global-set-key (kbd "C-S-<return>") 'python-shell-send-cell)
 
 (defun toggle-comment-on-line ()
