@@ -9,7 +9,7 @@
  '(cua-mode t nil (cua-base))
  '(delete-selection-mode nil)
  '(display-time-mode t)
- '(fill-column 80)
+ '(fill-column 79)
  '(global-linum-mode t)
  '(indent-tabs-mode nil)
  '(scroll-bar-mode nil)
@@ -78,19 +78,21 @@
 
 ;; PYTHON MODE
 ;; ===========
-(setq jedi:setup-keys t)
-(setq jedi:complete-on-dot t)
-(add-hook 'python-mode-hook 'jedi:setup)
-(add-hook 'python-mode-hook '(lambda ()
-			       (message "Found Python mode!")
-			       ;; (guess-style-guess-tab-width)
-			       (setq-default py-indent-tabs-mode nil)
-			       (setq-default python-indent 4)))
-(global-set-key (kbd "M-<") 'python-indent-shift-left)
-(global-set-key (kbd "M->") 'python-indent-shift-right)
+(elpy-enable)
+(elpy-use-ipython)
+;; (setq jedi:setup-keys t)
+;; (setq jedi:complete-on-dot t)
+;; (add-hook 'python-mode-hook 'jedi:setup)
+;; (add-hook 'python-mode-hook '(lambda ()
+;; 			       (message "Found Python mode!")
+;; 			       ;; (guess-style-guess-tab-width)
+;; 			       (setq-default py-indent-tabs-mode nil)
+;; 			       (setq-default python-indent 4)))
+;; (global-set-key (kbd "M-<") 'python-indent-shift-left)
+;; (global-set-key (kbd "M->") 'python-indent-shift-right)
 
-(when (executable-find "ipython")
-  (setq python-shell-interpreter "ipython"))
+;; (when (executable-find "ipython")
+;;   (setq python-shell-interpreter "ipython"))
 
 
 ;; AUCTeX
