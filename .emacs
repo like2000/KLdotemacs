@@ -44,15 +44,17 @@
 ;; COLOR THEMES
 ;; ============
 (load-theme 'zenburn t)
-;; (load-theme 'base16-default-dark t)
-;; (color-theme-sanityinc-tomorrow-day)
-(defun toggle-themes ()
-  "Switch from/to night color scheme."
-  (interactive)
-  (if (eq (frame-parameter (next-frame) 'background-mode) 'light)
-      (color-theme-sanityinc-tomorrow-night)
-    (color-theme-sanityinc-tomorrow-day)))
-(global-set-key (kbd "C-t") 'toggle-themes)
+;; (load-theme 'idea-darkula t)
+;; (color-theme-sanityinc-tomorrow-night)
+(defun switch-theme (theme)
+  ;; This interactive call is taken from `load-theme'
+  (interactive
+   (list
+    (intern (completing-read "Load custom theme: "
+                             (mapcar 'symbol-name
+                                     (custom-available-themes))))))
+  (mapcar #'disable-theme custom-enabled-themes)
+  (load-theme theme t))
 
 
 ;; PERSONALISED GENERAL KEY BINDINGS
@@ -166,7 +168,7 @@
 
 ;; ORG MODE
 ;; ========
-;; (require 'ox-reveal)
+(require 'ox-reveal)
 (setq system-time-locale "C")
 (org-babel-do-load-languages
  'org-babel-load-languages
