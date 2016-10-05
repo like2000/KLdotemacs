@@ -12,6 +12,7 @@
  '(fill-column 79)
  '(global-linum-mode t)
  '(indent-tabs-mode nil)
+ '(menu-bar-mode nil)
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(show-trailing-whitespace t)
@@ -22,13 +23,14 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Courier" :foundry "ibm" :slant normal :weight normal :height 113 :width normal))))
- '(trailing-whitespace ((t (:background "dark magenta")))))
+ '(default ((t (:family "Droid Sans Mono" :foundry "unknown" :slant normal :weight normal :height 113 :width normal))))
+ '(trailing-whitespace ((t (:background "dark gray")))))
 
 
 ;; LOOK AND FEEL - FURZEN UND SCHEISSEN
 ;; ====================================
 (desktop-save-mode 1)
+;; (set-face-background 'menubar "#00005a")
 (setq desktop-restore-in-current-display 1)
 (setq display-time-24hr-format t)
 
@@ -43,9 +45,11 @@
 
 ;; COLOR THEMES
 ;; ============
-(load-theme 'zenburn t)
+;; (load-theme 'aurora t)
+;; (load-theme 'zenburn t)
+;; (load-theme 'material t)
+(load-theme 'tangotango t)
 ;; (load-theme 'idea-darkula t)
-;; (color-theme-sanityinc-tomorrow-night)
 (defun switch-theme (theme)
   ;; This interactive call is taken from `load-theme'
   (interactive
@@ -82,6 +86,8 @@
 ;; ===========
 (elpy-enable)
 (elpy-use-ipython)
+(setq elpy-rpc-backend "jedi")
+;; (yas-global-mode 1)
 ;; (setq jedi:setup-keys t)
 ;; (setq jedi:complete-on-dot t)
 ;; (add-hook 'python-mode-hook 'jedi:setup)
@@ -173,3 +179,10 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((python . t)))
+
+
+;; TABBAR
+;; ======
+(tabbar-mode)
+(global-set-key (kbd "C-S-<left>") 'tabbar-backward-tab)
+(global-set-key (kbd "C-S-<right>") 'tabbar-forward-tab)
