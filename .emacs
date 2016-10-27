@@ -50,6 +50,7 @@
 ;; (load-theme 'material t)
 (load-theme 'tangotango t)
 ;; (load-theme 'idea-darkula t)
+;; (load-theme 'solarized-dark t)
 (defun switch-theme (theme)
   ;; This interactive call is taken from `load-theme'
   (interactive
@@ -64,7 +65,7 @@
 ;; PERSONALISED GENERAL KEY BINDINGS
 ;; =================================
 (windmove-default-keybindings)
-(global-set-key (kbd "<f11>") 'fullscreen-mode-fullscreen-toggle)
+;; (global-set-key (kbd "<f11>") 'fullscreen-mode-fullscreen-toggle)
 (global-set-key (kbd "C-c C-b") 'ibuffer)
 (global-set-key (kbd "C-M-<left>") 'previous-buffer)
 (global-set-key (kbd "C-M-<right>") 'next-buffer)
@@ -179,6 +180,8 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((python . t)))
+(define-key org-mode-map (kbd "<C-S-left>") nil)
+(define-key org-mode-map (kbd "<C-S-right>") nil)
 
 
 ;; TABBAR
