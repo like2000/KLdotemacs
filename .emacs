@@ -7,15 +7,17 @@
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
  '(cua-mode t nil (cua-base))
- '(delete-selection-mode nil)
  '(display-time-mode t)
+ '(ecb-options-version "2.50")
  '(fill-column 79)
  '(global-linum-mode t)
  '(indent-tabs-mode nil)
  '(menu-bar-mode nil)
+ '(package-selected-packages
+   (quote
+    (gruvbox-theme evil evil-tabs god-mode google-maps org-outlook tango-2-theme csv csv-mode csv-nav flatland-theme flatui-dark-theme flatui-theme ecb zenburn-theme tangotango-theme tabbar-ruler swiper solarized-theme rainbow-mode ox-reveal ox-impress-js multiple-cursors multi-term matlab-mode material-theme magit jedi idea-darkula-theme helm-descbinds github-theme emacs-droid elpy ein eclipse-theme cython-mode company-jedi color-theme-zenburn color-theme-tangotango color-theme-monokai color-theme-emacs-revert-theme color-theme-eclipse auto-complete-octave aurora-theme auctex android-mode)))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
- '(show-trailing-whitespace t)
  '(tab-width 4)
  '(tool-bar-mode nil))
 (custom-set-faces
@@ -23,16 +25,18 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Droid Sans Mono" :foundry "unknown" :slant normal :weight normal :height 113 :width normal))))
- '(trailing-whitespace ((t (:background "dark gray")))))
+ '(default ((t (:family "Droid Sans Mono" :foundry "unknown" :slant normal :weight normal :height 113 :width normal)))))
 
 
 ;; LOOK AND FEEL - FURZEN UND SCHEISSEN
 ;; ====================================
 (desktop-save-mode 1)
 ;; (set-face-background 'menubar "#00005a")
-(setq desktop-restore-in-current-display 1)
 (setq display-time-24hr-format t)
+(setq desktop-restore-in-current-display 1)
+;; set transparency
+(set-frame-parameter (selected-frame) 'alpha '(90 90))
+(add-to-list 'default-frame-alist '(alpha 90 90))
 
 
 ;; PACKAGE
@@ -46,9 +50,10 @@
 ;; COLOR THEMES
 ;; ============
 ;; (load-theme 'aurora t)
+;; (load-theme 'gruvbox t)
 ;; (load-theme 'zenburn t)
 ;; (load-theme 'material t)
-(load-theme 'tangotango t)
+(load-theme 'tango-dark t)
 ;; (load-theme 'idea-darkula t)
 ;; (load-theme 'solarized-dark t)
 (defun switch-theme (theme)
@@ -65,11 +70,14 @@
 ;; PERSONALISED GENERAL KEY BINDINGS
 ;; =================================
 (windmove-default-keybindings)
-;; (global-set-key (kbd "<f11>") 'fullscreen-mode-fullscreen-toggle)
 (global-set-key (kbd "C-c C-b") 'ibuffer)
-(global-set-key (kbd "C-M-<left>") 'previous-buffer)
-(global-set-key (kbd "C-M-<right>") 'next-buffer)
-(global-set-key (kbd "C-S-<return>") 'python-shell-send-cell)
+;; (global-set-key (kbd "C-M-<left>") 'previous-buffer)
+;; (global-set-key (kbd "C-M-<right>") 'next-buffer)
+(global-set-key (kbd "C-S-<up>") 'enlarge-window)
+(global-set-key (kbd "C-S-<down>") 'shrink-window)
+(global-set-key (kbd "C-S-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "C-S-<right>") 'enlarge-window-horizontally)
+;; (global-set-key (kbd "C-S-<return>") 'python-shell-send-cell)
 
 (defun toggle-comment-on-line ()
   "Comment or uncomment current line"
@@ -86,7 +94,7 @@
 ;; PYTHON MODE
 ;; ===========
 (elpy-enable)
-(elpy-use-ipython)
+;; (elpy-use-ipython)
 (setq elpy-rpc-backend "jedi")
 ;; (yas-global-mode 1)
 ;; (setq jedi:setup-keys t)
@@ -99,9 +107,6 @@
 ;; 			       (setq-default python-indent 4)))
 ;; (global-set-key (kbd "M-<") 'python-indent-shift-left)
 ;; (global-set-key (kbd "M->") 'python-indent-shift-right)
-
-;; (when (executable-find "ipython")
-;;   (setq python-shell-interpreter "ipython"))
 
 
 ;; AUCTeX
@@ -130,6 +135,12 @@
 (global-set-key (kbd "M-S-<up>") 'doc-prev)
 (global-set-key (kbd "M-S-<down>") 'doc-next)
 (add-hook 'doc-view-mode-hook 'auto-revert-mode)
+
+
+;; EVIL
+;; ====
+(require 'evil)
+(evil-mode 1)
 
 
 ;; HELM
@@ -180,12 +191,25 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((python . t)))
-(define-key org-mode-map (kbd "<C-S-left>") nil)
-(define-key org-mode-map (kbd "<C-S-right>") nil)
+;; (define-key org-mode-map (kbd "<C-S-left>") nil)
+;; (define-key org-mode-map (kbd "<C-S-right>") nil)
 
 
 ;; TABBAR
 ;; ======
-(tabbar-mode)
-(global-set-key (kbd "C-S-<left>") 'tabbar-backward-tab)
-(global-set-key (kbd "C-S-<right>") 'tabbar-forward-tab)
+(require 'tabbar-ruler)
+(setq tabbar-ruler-popup-menu t)       ; get popup menu.
+(setq tabbar-ruler-global-tabbar t)    ; get tabbar
+;; (setq tabbar-ruler-global-ruler t)     ; get global ruler
+(global-set-key (kbd "C-M-<left>") 'tabbar-backward-tab)
+(global-set-key (kbd "C-M-<right>") 'tabbar-forward-tab)
+
+
+;; TEST SHELL MODE
+;; ===============
+; interpret and use ansi color codes in shell output windows
+(ansi-color-for-comint-mode-on)
+; make completion buffers disappear after 3 seconds.
+(add-hook 'completion-setup-hook
+          (lambda () (run-at-time 3 nil
+                                  (lambda () (delete-windows-on "*Completions*")))))
