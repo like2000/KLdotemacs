@@ -7,6 +7,7 @@
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
  '(cua-mode t nil (cua-base))
+ '(delete-selection-mode nil)
  '(display-time-mode t)
  '(ecb-options-version "2.50")
  '(fill-column 79)
@@ -15,7 +16,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (gruvbox-theme evil evil-tabs god-mode google-maps org-outlook tango-2-theme csv csv-mode csv-nav flatland-theme flatui-dark-theme flatui-theme ecb zenburn-theme tangotango-theme tabbar-ruler swiper solarized-theme rainbow-mode ox-reveal ox-impress-js multiple-cursors multi-term matlab-mode material-theme magit jedi idea-darkula-theme helm-descbinds github-theme emacs-droid elpy ein eclipse-theme cython-mode company-jedi color-theme-zenburn color-theme-tangotango color-theme-monokai color-theme-emacs-revert-theme color-theme-eclipse auto-complete-octave aurora-theme auctex android-mode)))
+    (org-bullets gruvbox-theme evil evil-tabs god-mode google-maps org-outlook tango-2-theme csv csv-mode csv-nav flatland-theme flatui-dark-theme flatui-theme ecb zenburn-theme tangotango-theme tabbar-ruler swiper solarized-theme rainbow-mode ox-reveal ox-impress-js multiple-cursors multi-term matlab-mode material-theme magit jedi idea-darkula-theme helm-descbinds github-theme emacs-droid elpy ein eclipse-theme cython-mode company-jedi color-theme-zenburn color-theme-tangotango color-theme-monokai color-theme-emacs-revert-theme color-theme-eclipse auto-complete-octave aurora-theme auctex android-mode)))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(tab-width 4)
@@ -139,8 +140,8 @@
 
 ;; EVIL
 ;; ====
-(require 'evil)
-(evil-mode 1)
+;; (require 'evil)
+;; (evil-mode 1)
 
 
 ;; HELM
@@ -186,6 +187,17 @@
 
 ;; ORG MODE
 ;; ========
+(defun my/org-mode-hook ()
+  (set-face-attribute 'org-level-1 nil :height 1.20 :weight 'extra-bold)
+  (set-face-attribute 'org-level-2 nil :height 1.15 :weight 'extra-bold)
+  (set-face-attribute 'org-level-3 nil :height 1.10 :weight 'extra-bold)
+  (set-face-attribute 'org-level-4 nil :height 1.05 :weight 'extra-bold)
+  (set-face-attribute 'org-level-5 nil :height 1.00 :weight 'extra-bold))
+(add-hook 'org-load-hook #'my/org-mode-hook)
+
+(require 'org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
 (require 'ox-reveal)
 (setq system-time-locale "C")
 (org-babel-do-load-languages
