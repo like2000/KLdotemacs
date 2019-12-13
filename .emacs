@@ -5,56 +5,77 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(tab-width 4)
+ '(fill-column 79)
+ '(show-paren-mode t)
+ '(tool-bar-mode nil)
+ '(display-time-mode t)
+ '(global-linum-mode t)
+ '(scroll-bar-mode nil)
  '(column-number-mode t)
+ '(indent-tabs-mode nil)
  '(cua-mode t nil (cua-base))
  '(delete-selection-mode nil)
- '(display-time-mode t)
- '(ecb-options-version "2.50")
- '(fill-column 79)
- '(global-linum-mode t)
- '(indent-tabs-mode nil)
- '(menu-bar-mode nil)
- '(package-selected-packages
-   (quote
-    (org-bullets gruvbox-theme evil evil-tabs god-mode google-maps org-outlook tango-2-theme csv csv-mode csv-nav flatland-theme flatui-dark-theme flatui-theme ecb zenburn-theme tangotango-theme tabbar-ruler swiper solarized-theme rainbow-mode ox-reveal ox-impress-js multiple-cursors multi-term matlab-mode material-theme magit jedi idea-darkula-theme helm-descbinds github-theme emacs-droid elpy ein eclipse-theme cython-mode company-jedi color-theme-zenburn color-theme-tangotango color-theme-monokai color-theme-emacs-revert-theme color-theme-eclipse auto-complete-octave aurora-theme auctex android-mode)))
- '(scroll-bar-mode nil)
- '(show-paren-mode t)
- '(tab-width 4)
- '(tool-bar-mode nil))
+ '(show-trailing-whitespace t)
+ )
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Droid Sans Mono" :foundry "unknown" :slant normal :weight normal :height 113 :width normal)))))
+ '(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :slant normal :weight normal :height 113 :width normal))))
+ '(trailing-whitespace ((t (:background "dark gray")))))
 
 
 ;; LOOK AND FEEL - FURZEN UND SCHEISSEN
 ;; ====================================
 (desktop-save-mode 1)
-;; (set-face-background 'menubar "#00005a")
 (setq display-time-24hr-format t)
 (setq desktop-restore-in-current-display 1)
 ;; set transparency
-(set-frame-parameter (selected-frame) 'alpha '(90 90))
 (add-to-list 'default-frame-alist '(alpha 90 90))
+(set-frame-parameter (selected-frame) 'alpha '(90 90))
 
 
 ;; PACKAGE
 ;; =======
 (require 'package)
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
 
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+(require 'use-package)
+(setq use-package-always-ensure t)
+
+(use-package ecb)
+(use-package elpy)
+(use-package jedi)
+(use-package move-line)
+(use-package ox-reveal)
+(use-package org-bullets)
+(use-package company-jedi)
+(use-package tabbar-ruler)
+(use-package zenburn-theme)
+(use-package helm-descbinds)
+(use-package material-theme)
+(use-package multiple-cursors)
+(use-package tangotango-theme)
+(use-package zen-and-art-theme)
+(use-package color-theme-sanityinc-solarized)
+(use-package ace-jump-mode
+  :bind ("M-SPC" . ace-jump-mode))
+;; tabbar ein
 
 ;; COLOR THEMES
 ;; ============
 ;; (load-theme 'aurora t)
-;; (load-theme 'gruvbox t)
 ;; (load-theme 'zenburn t)
-;; (load-theme 'material t)
-(load-theme 'tango-dark t)
+(load-theme 'material t)
+;; (load-theme 'tangotango t)
 ;; (load-theme 'idea-darkula t)
 ;; (load-theme 'solarized-dark t)
 (defun switch-theme (theme)
@@ -72,12 +93,12 @@
 ;; =================================
 (windmove-default-keybindings)
 (global-set-key (kbd "C-c C-b") 'ibuffer)
-;; (global-set-key (kbd "C-M-<left>") 'previous-buffer)
 ;; (global-set-key (kbd "C-M-<right>") 'next-buffer)
-(global-set-key (kbd "C-S-<up>") 'enlarge-window)
-(global-set-key (kbd "C-S-<down>") 'shrink-window)
-(global-set-key (kbd "C-S-<left>") 'shrink-window-horizontally)
-(global-set-key (kbd "C-S-<right>") 'enlarge-window-horizontally)
+;; (global-set-key (kbd "C-M-<left>") 'previous-buffer)
+;; (global-set-key (kbd "C-S-<up>") 'enlarge-window)
+;; (global-set-key (kbd "C-S-<down>") 'shrink-window)
+;; (global-set-key (kbd "C-S-<left>") 'shrink-window-horizontally)
+;; (global-set-key (kbd "C-S-<right>") 'enlarge-window-horizontally)
 ;; (global-set-key (kbd "C-S-<return>") 'python-shell-send-cell)
 
 (defun toggle-comment-on-line ()
@@ -87,15 +108,19 @@
 (global-set-key (kbd "C-;") 'toggle-comment-on-line)
 
 
-;; SOME HANDY PACKAGES
-;; ===================
+;; MOVE LINES
+;; ==========
+(require 'move-line)
+(global-set-key (kbd "S-M-<up>") 'move-line-up)
+(global-set-key (kbd "S-M-<down>") 'move-line-down)
 ;; (add-hook 'after-init-hook #'global-flycheck-mode)
 
 
 ;; PYTHON MODE
 ;; ===========
+(elpy-version)
 (elpy-enable)
-;; (elpy-use-ipython)
+;; (elpy-use-ipython) # Buggy on lxplus - makes tabs in ipython!
 (setq elpy-rpc-backend "jedi")
 ;; (yas-global-mode 1)
 ;; (setq jedi:setup-keys t)
@@ -133,8 +158,8 @@
 (setq doc-view-resolution 150)
 (fset 'doc-prev "\C-xo\C-x[\C-xo")
 (fset 'doc-next "\C-xo\C-x]\C-xo")
-(global-set-key (kbd "M-S-<up>") 'doc-prev)
-(global-set-key (kbd "M-S-<down>") 'doc-next)
+;; (global-set-key (kbd "M-S-<up>") 'doc-prev)
+;; (global-set-key (kbd "M-S-<down>") 'doc-next)
 (add-hook 'doc-view-mode-hook 'auto-revert-mode)
 
 
@@ -198,13 +223,13 @@
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
-(require 'ox-reveal)
-(setq system-time-locale "C")
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((python . t)))
-;; (define-key org-mode-map (kbd "<C-S-left>") nil)
-;; (define-key org-mode-map (kbd "<C-S-right>") nil)
+;; (require 'ox-reveal)
+;; (setq system-time-locale "C")
+;; (org-babel-do-load-languages
+;;  'org-babel-load-languages
+;;  '((python . t)))
+;; ;; (define-key org-mode-map (kbd "<C-S-left>") nil)
+;; ;; (define-key org-mode-map (kbd "<C-S-right>") nil)
 
 
 ;; TABBAR
@@ -219,9 +244,9 @@
 
 ;; TEST SHELL MODE
 ;; ===============
-; interpret and use ansi color codes in shell output windows
+                                        ; interpret and use ansi color codes in shell output windows
 (ansi-color-for-comint-mode-on)
-; make completion buffers disappear after 3 seconds.
+                                        ; make completion buffers disappear after 3 seconds.
 (add-hook 'completion-setup-hook
           (lambda () (run-at-time 3 nil
                                   (lambda () (delete-windows-on "*Completions*")))))
